@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Job Seeker">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+  <title>Job Seeker</title>
+  <meta name="description" content="Job Seeker">
+  <base href="/">
+  <link rel="icon" href="manifest/icon.png">
+  <link rel="manifest" href="manifest.json">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <meta name="theme-color" content="#673AB7">
+  <script src="./src/landing-page.js" type="module" async></script>  
+  <script src="./src/shared-styles.js"></script>
+  <script src="./src/style-element.js"></script>
+  <script type="module">
+    import '@polymer/iron-icon/iron-icon.js';
+    import '@polymer/iron-icons/iron-icons.js';
+  </script>
+  <script>
+    window.MyAppGlobals = { rootPath: '/' };
+    // Load and register pre-caching Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('service-worker.js', {
+          scope: MyAppGlobals.rootPath
+        });
+      });
+    }
+  </script>
+  <style>
+    body {
+      font-family: "Times New Roman";
+      background-image: linear-gradient(60deg,#c3ac83, #5478e4);
+    }
+  </style> 
+</head>
+<body>
+  <landing-page></landing-page>
+</body>
+</html>

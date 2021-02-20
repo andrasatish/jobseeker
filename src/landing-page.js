@@ -79,6 +79,7 @@ class LandingPage extends PolymerElement {
                   <profile-app name="profile"></profile-app>
                   <jobs-list name="jobs-list"></jobs-list>
                   <job-description name="job-description"></job-description>
+                  <edit-profile name="edit-profile"></edit-profile>
                   <not-found404 name="not-found404"></not-found404>
                 </iron-pages>
                 <!-- Iron Pages End -->
@@ -114,7 +115,7 @@ class LandingPage extends PolymerElement {
 
         if (!page) {
             this.page = 'login';
-        } else if (['login', 'profile', 'jobs-list', 'job-description', 'logout'].indexOf(page) !== -1) {
+        } else if (['login', 'profile', 'jobs-list', 'job-description', 'edit-profile', 'logout'].indexOf(page) !== -1) {
             this.page = page;
         } else {
             this.page = 'not-found404';
@@ -148,11 +149,14 @@ class LandingPage extends PolymerElement {
 
             case 'jobs-list':
                 import ('./jobs-list.js');
-                console.log('JOBS LIST ');
                 break;
 
             case 'job-description':
                 import ('./jobs-description.js');
+                break;
+
+            case 'edit-profile':
+                import ('./edit-profile.js');
                 break;
         }
     }

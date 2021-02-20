@@ -10,6 +10,81 @@ import './global-styles.js';
 
 class ProfileApp extends PolymerElement {
 
+  static get properties() {
+    return {
+        user: {
+            type: Object,
+            value: {
+              "profile": {
+                  "name": "Satish",
+                  "location": "Hyderabad / Secundrabad",
+                  "experience": {
+                      "years" : 4,
+                      "months": 2
+                  },
+                  "salary":{
+                      "lakhs":5,
+                      "thousand":50
+                  },
+                  "mobile":9177267370,
+                  "mail":"andra.satish@gmail.com",
+                  "aboutme": "Hello! I’m Joyce Harrison. I am passionate about UI/UX design and Web Design. I am a skilled Front-end Developer and master of Graphic Design tools such as Photoshop and Sketch.",
+                  "professionalskills":[
+                    {
+                      "lang":"HTML",
+                      "rating":90
+                    },
+                    {
+                      "lang":"CSS",
+                      "rating":80
+                    },
+                    {
+                      "lang":"JavaScript",
+                      "rating":86
+                    },
+                    {
+                      "lang":"POLYMER",
+                      "rating":80
+                    },
+                    {
+                      "lang":"ANGULAR",
+                      "rating":70
+                    },
+                    {
+                      "lang":"REACT",
+                      "rating":90
+                    }
+                  ],
+                  "workexperience":"Hello! I’m Joyce Harrison. I am passionate about UI/UX design and Web Design. I am a skilled Front-end Developer and master of Graphic Design tools such as Photoshop and Sketch.",
+                  "education":[
+                      {
+                          "education":10,
+                          "yearofpassing":2006,
+                          "board":"SSC",
+                          "medium":"Telugu",
+                          "percentage":80
+                      },
+                      {
+                          "education":"Inter",
+                          "yearofpassing":2008,
+                          "board":"Board of Intermediate",
+                          "medium":"English",
+                          "percentage":70
+                      },
+                      {
+                          "education":"B.Tech",
+                          "yearofpassing":2012,
+                          "board":"Andhra University",
+                          "medium":"English",
+                          "percentage":72
+                      }
+                  ]
+              }
+          }
+        }
+    };
+ }
+
     static get template() {
       return html `
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
@@ -109,7 +184,7 @@ class ProfileApp extends PolymerElement {
             margin-bottom:15px;
             color:#6781d3;
           }
-          .file-upload{
+          .filled-btn{
             margin: 0 auto;
             display: block;
             background: royalblue;
@@ -118,6 +193,10 @@ class ProfileApp extends PolymerElement {
             border-radius: 5px;
             outline: none;
             border: none;
+          }
+          .edit-btn{
+            background: #b17e64;
+            float: right;
           }
           .icon-color{
             color:#6781d3
@@ -172,11 +251,13 @@ class ProfileApp extends PolymerElement {
         </style>
         <section id="profile-wrapper">
         
-        <!-- Work Experience -->
+        <!-- Action Button -->
         <div class="row container-bg">
           <div class="col-md-12">
-            <p class="profile-title">Work Experience</p>   
-            <p>Hello! I’m Joyce Harrison. I am passionate about UI/UX design and Web Design. I am a skilled Front-end Developer and master of Graphic Design tools such as Photoshop and Sketch.</p> 
+            <p>{{data.profile.name}}</p>
+            <button type="submit" value="Edit Profile" on-click="editDetails" class="filled-btn edit-btn">
+              <iron-icon icon="create"></iron-icon>  Edit Profile
+            </button>
           </div>
         </div>
 
@@ -200,8 +281,8 @@ class ProfileApp extends PolymerElement {
                 <div class="col-md-4 col-sm-12 float-left">
                   <div class="container">
                     <p class="profile-title upload-title">Upload your resume</p>
-                    <input type="file" class="file-upload" style="display:none">
-                    <input id="submitForValidation" type="submit" value="UPDATE RESUME" on-click="uploadFile" class="file-upload">
+                    <input type="file" class="filled-btn" style="display:none">
+                    <input id="submitForValidation" type="submit" value="UPDATE RESUME" on-click="uploadFile" class="filled-btn">
                   </div>
                 </div>
               </div>
@@ -274,6 +355,11 @@ class ProfileApp extends PolymerElement {
 
     uploadFile(){
       console.log('Hello')
+    }
+
+    editDetails(){
+      window.localStorage.setItem('profileDetails',JSON.stringify(this.user.profile));
+      window.location.href = "/edit-profile";
     }
 }
 

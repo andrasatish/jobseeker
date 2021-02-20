@@ -1,0 +1,42 @@
+{
+    "profile": {
+        "name": "Satish",
+        "location": "Hyderabad / Secundrabad",
+        "experience": {
+            "years" : 4,
+            "months": 2
+        },
+        "salary":{
+            "lakhs":5,
+            "thousand":50
+        },
+        "mobile":9177267370,
+        "mail":"andra.satish@gmail.com",
+        "aboutme": "Hello! I’m Joyce Harrison. I am passionate about UI/UX design and Web Design. I am a skilled Front-end Developer and master of Graphic Design tools such as Photoshop and Sketch.",
+        "professionalskills":["HTML","CSS","JavaScript","POLYMER","ANGULAR","REACT"],
+        "workexperience":"Hello! I’m Joyce Harrison. I am passionate about UI/UX design and Web Design. I am a skilled Front-end Developer and master of Graphic Design tools such as Photoshop and Sketch.",
+        "education":[
+            {
+                "education":10,
+                "yearofpassing":2006,
+                "board":"SSC",
+                "medium":"Telugu",
+                "percentage":80
+            },
+            {
+                "education":"Inter",
+                "yearofpassing":2008,
+                "board":"Board of Intermediate",
+                "medium":"English",
+                "percentage":70
+            },
+            {
+                "education":"B.Tech",
+                "yearofpassing":2012,
+                "board":"Andhra University",
+                "medium":"English",
+                "percentage":72
+            }
+        ]
+    }
+}

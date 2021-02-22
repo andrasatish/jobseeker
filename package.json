@@ -6,6 +6,7 @@
   "author": "The Polymer Project Authors",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "@fluidnext-polymer/paper-input-file": "^3.1.0",
     "@google-web-components/google-chart": "^4.0.2",
     "@polymer/app-layout": "^3.1.0",
     "@polymer/app-route": "^3.0.2",

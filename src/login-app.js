@@ -5,10 +5,9 @@ import './style-element.js';
 
 class LoginApp extends PolymerElement {
 
-    static get template() {
-            return html `
-      <style include="style-element">
-      
+static get template() {
+    return html `
+      <style include="style-element">    
       </style>
      
     <div id="login">

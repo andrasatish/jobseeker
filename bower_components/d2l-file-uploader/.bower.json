@@ -1,0 +1,15 @@
+{
+  "name": "d2l-file-uploader",
+  "homepage": "https://github.com/BrightspaceUI/file-uploader",
+  "version": "2.0.2",
+  "_release": "2.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.2",
+    "commit": "f4df2f1bc16e09b6b574d5f37fdeb62844b6cda6"
+  },
+  "_source": "https://github.com/BrightspaceUI/file-uploader.git",
+  "_target": "^2.0.2",
+  "_originalSource": "d2l-file-uploader",
+  "_direct": true
+}

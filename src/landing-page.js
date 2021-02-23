@@ -53,7 +53,7 @@ class LandingPage extends PolymerElement {
                 <a name="profile" role="Profile" href="[[rootPath]]profile"> Profile</a>
                 <a name="jobs-list" role="Jobs List" href="[[rootPath]]jobs-list"> Jobs List</a>
                 <a name="job-description" role="Job Description" href="[[rootPath]]job-description"> Job Description</a>
-                <a name="about-us" role="About Us" href="[[rootPath]]about-us"> About Us</a>
+                <a name="edit-profile" role="Edit Profile" href="[[rootPath]]edit-profile"> Edit Profile</a>
                 <a name="login" href="[[rootPath]]login" role="Logout">Logout</a>
               </iron-selector>
               <!-- Iron Selecctor End -->

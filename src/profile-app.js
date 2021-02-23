@@ -102,196 +102,15 @@ class ProfileApp extends PolymerElement {
                 integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
                 crossorigin="anonymous"/>
       <link rel="stylesheet" href="/node_modules/material-design-lite/material.min.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <script src="/node_modules/material-design-lite/material.min.js"></script>
-      <script type="module" src="@fluidnext-polymer/paper-input-file/paper-input-file.js"></script>
-      <script type="module" src="@fluidnext-polymer/paper-input-file/icons/paper-input-file-icons.js"></script>
         <style include="shared-styles">
-          .col-md-2{
-            width:20%;
-          }
-          .col-md-3{
-            width:25%;
-          }
-          .col-md-4{
-            width:33%;
-          }
-          .col-md-5{
-            width:41%;
-          }
-          .col-md-6{
-            width:50%;
-          }
-          .col-md-10{
-            width:80%;
-          }
-          .float-left{
-            float: left;
-          }
-          .float-right{
-            float: right;
-          }
-          .row{
-            width:98%;
-            box-sizing: border-box;
-          }
-          .clear-float{
-            clear: both;
-          }
-          .img-rounded{
-            border-radius:50%;
-          }
-          .container-bg{
-            background:#eaffff;
-            overflow:hidden;
-            padding:10px 40px 10px 10px;
-            margin:10px 40px 10px 10px;
-            border-radius:5px;
-          }
-          .mx-10{
-            margin:0 10px;
-          }
-          .my-10{
-            margin:10 0;
-          }
-          .mx-5{
-            margin:0 5px;
-          }
-          .my-5{
-            margin:5 0;
-          }
-          .ml-5{
-            margin-left:5px;
-          }
-          .mr-5{
-            margin-right:5px;
-          }
-          .mt-5{
-            margin-top:5px;
-          }
-          .mb-5{
-            margin-bottom:5px;
-          }
-          .mb-10{
-            margin-bottom:10px;
-          }
-          .ml-10{
-            margin-left:10px;
-          }
-          .mr-10{
-            margin-right:10px;
-          }
-          .mt-10{
-            margin-top:10px;
-          }
-          .mb-10{
-            margin-bottom:10px;
-          }
-          .pl-5{
-            padding:5px;
-            box-sizing: border-box;
-          }
-          p{
-            margin:0;
-            margin-bottom:10px; 
-          }
-          .profile-title{
-            font-size:30px;
-            margin-bottom:15px;
-            color:#6781d3;
-          }
-          .filled-btn{
-            margin: 0 auto;
-            display: block;
-            background: royalblue;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            outline: none;
-            border: none;
-          }
-          .edit-btn{
-            background: #b17e64;
-            float: right;
-          }
-          .icon-color{
-            color:#6781d3
-          } 
-          .upload-title{
-            font-size:20px;
-            text-align:center;
-          }
-          .progress {
-            display: flex;
-            height: 1rem;
-            overflow: hidden;
-            font-size: .75rem;
-            background-color: #e9ecef;
-            border-radius: .25rem;
-        }
-          .progress-bar {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            overflow: hidden;
-            color: #fff;
-            text-align: center;
-            white-space: nowrap;
-            background-color: #4a89dc;
-            transition: width .6s ease;
-        }
-        .bg-primary{
-          background: royalblue;
-        }
-        .bg-success{
-          background: #25db6e;
-        }
-          @media only screen and (max-width: 1000px) {
-            .col-sm-12{
-              width:100%;
-            }
-            .float-left{
-              float:none;
-              display:block;
-            }
-            .container{
-              padding:50px;
-              border:1px solid royalblue;
-              border-radius:5px;
-              width:100%;
-            }
-            .row{
-              width:97%;
-            }
-            .file-upload-button {
-              background-color: #ff5252;
-              border-radius: 5px;
-              height: 3rem;
-              overflow: hidden;
-              position: relative;
-              width: 10rem;  
-            }
-            .file-info {
-                color: #999;
-                font-family: Lato;
-                margin-left: 0.5rem;
-            }
-            input[type="file"] {
-              font-size: 100px;
-              left: 0;
-              opacity: 0;
-              position: absolute;
-              top: 0;
-            }          
-          }
         </style>
-        <section id="profile-wrapper">
-        
+        <section id="profile-wrapper">        
         <!-- Action Button -->
         <div class="row container-bg">
           <div class="col-md-12">
             <p>{{data.profile.name}}</p>
-            <button type="submit" value="Edit Profile" on-click="editDetails()" class="filled-btn edit-btn">
+            <button type="submit" value="Edit Profile" on-click="editDetails" class="filled-btn edit-btn">
               <iron-icon icon="create"></iron-icon>  Edit Profile
             </button>
           </div>
@@ -317,10 +136,7 @@ class ProfileApp extends PolymerElement {
                 <div class="col-md-4 col-sm-12 float-left">
                   <div class="container">
                     <p class="profile-title upload-title">Upload your resume</p>
-                    <button class="file-upload-button">
-                      <input type="file" fileInput on-click="uploadFile" data-item$="[[fileInput]]/> Upload Resume
-                    </button>
-                    <p class="file-info">{{ fileInfo }}</p>
+                    <input #Image type="file" on-click="uploadFile($event.target.files)"/>
                   </div>
                 </div>
               </div>
@@ -393,8 +209,10 @@ class ProfileApp extends PolymerElement {
     `;
     }
 
-    uploadFile(){
-      window.alert('Resume has been uploaded successfully in jobseeker');
+    uploadFile(file){
+      var args = file.item[0];
+      console.log(args);
+
     }
 
     editDetails(){

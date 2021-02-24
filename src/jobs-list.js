@@ -91,7 +91,97 @@ class JobsList extends PolymerElement {
             posted : "Today"
           }
         ]
-      }
+      },
+      filtered: {
+        type : Array,
+        value : [
+          {
+            jobId : 101,
+            jobProfile : "Sr. Software Engineer - JavaFS Developer",
+            company : "OpenText",
+            experience : "5-7 Yrs",
+            location : "Hyderabad",
+            technologies : "JavaCloud, DevOps, Angularjs, Node.js, CSS, Javascript",
+            salary : "Not disclosed",
+            posted : "3 days ago"
+          },
+          {
+            jobId : 102,
+            jobProfile : "Lead - Senior Developer",
+            company : "Skill 2 Source Consulting LLP",
+            experience : "5-7 Yrs",
+            location : "Hyderabad(Gachibowli)",
+            technologies : "Angularjs, CSSNode, JsHTMLMern, StackCommunication",
+            salary : "9,00,000 - 14,00,000 PA.",
+            posted : "1 days ago"
+          },
+          {
+            jobId : 103,
+            jobProfile : "Senior Front End Developer - AngularJS/2",
+            company : "Hungry Bird Consulting Services",
+            experience : "5-10 Yrs",
+            location : "Hyderabad",
+            technologies : "Javascript, RESTful API, AngularJS, CSS, jQueryEmber, jsJavascript",
+            salary : "Not disclosed",
+            posted : "5 days ago"
+          },
+          {
+            jobId : 104,
+            jobProfile : "Lead UI Developer - HTML5/CSS3/Angular 7+",
+            company : "Intileo Technologies",
+            experience : "3-6 Yrs",
+            location : "Bengaluru, Hyderabad",
+            technologies : "Javascript, Angular, 8TypeScript, AngularJS, Angular 7, jQueryUI",
+            salary : "Not disclosed",
+            posted : "Today"
+          },
+          {
+            jobId : 105,
+            jobProfile : "React JS Developer",
+            company : "SCreatives Software Services Private Limited",
+            experience : "4-8 Yrs",
+            location : "Hyderabad",
+            technologies : "Testing, React js, Node js, CSS, angular, CSS, jQuery",
+            salary : "Not disclosed",
+            posted : "Just now"
+          },
+          {
+            jobId : 106,
+            jobProfile : "Polymer Developer",
+            company : "Arck IT Services",
+            experience : "5-9 Yrs",
+            location : "Hyderabad(Gachibowli)",
+            technologies : "Cloud, HTML, CSS, Javascript, AWSAzure, Polymer",
+            salary : "Not disclosed",
+            posted : "Today"
+          },
+          {
+            jobId : 107,
+            jobProfile : "Node.js Developer - Express.js/javascript",
+            company : "TrueView HR Consulting Pvt. Ltd",
+            experience : "4-9 Yrs",
+            location : "Bangaluru",
+            technologies : "Javascript, rest, node js",
+            salary : "9L",
+            posted : "1 days ago"
+          },
+          {
+            jobId : 108,
+            jobProfile : "Lead UI Developer",
+            company : "Intileo Technologies",
+            experience : "3-6 Yrs",
+            location : "Bengaluru, Hyderabad",
+            technologies : "Javascript, Angular, 8TypeScript, AngularJS, Angular 7, jQueryUI",
+            salary : "Not disclosed",
+            posted : "Today"
+          }
+        ]
+      },
+      searchInput: {
+        type: String,
+        value: ''
+      },
+      item: {}
     }
   }
   static get template() {
@@ -118,11 +208,21 @@ class JobsList extends PolymerElement {
         .pointing-cursor{
           cursor: pointer;
         }
+        .search-btn{
+          width: 50%;
+          display: block;
+          margin: auto;
+        }
       </style>
 
       <!-- Professional Skills -->
       <div class="row cards-container clear-float">   
-        <template is="dom-repeat" items="{{jobs}}" id="jobs" > 
+        <div id="search" show$="{{show}}" on-click="toggleSearch">
+          <iron-input bind-value="{{searchInput}}" on-keydown="onKeyPress" class="search-btn">
+            <input placeholder="Search">
+          </iron-input>
+        </div>
+        <template is="dom-repeat" items="{{filtered}}" id="jobs" > 
           <div class="item">
             <div class="col-md-6 col-sm-12 pointing-cursor float-left" on-click="selectedJob">
               <div class="demo-card-wide mdl-card">
@@ -148,6 +248,24 @@ class JobsList extends PolymerElement {
       </div>
     `;
    }
+
+   toggleSearch(){
+      console.log('show something');
+    }
+
+   onKeyPress() {
+    var searchFilter = this.searchInput.toLowerCase();
+    var res = []
+    res=this.jobs.filter(j => 
+      j.jobProfile.toLowerCase().includes(searchFilter)
+     || j.company.toLowerCase().includes(searchFilter)
+     || j.experience.toLowerCase().includes(searchFilter)
+     || j.location.toLowerCase().includes(searchFilter)
+     || j.technologies.toLowerCase().includes(searchFilter)
+     || j.salary.toLowerCase().includes(searchFilter)
+     || j.posted.toLowerCase().includes(searchFilter))
+    this.filtered = res
+  }
 
    selectedJob(e) {
       var item = e.model.__data.item;

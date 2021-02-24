@@ -104,6 +104,12 @@ class ProfileApp extends PolymerElement {
       <link rel="stylesheet" href="/node_modules/material-design-lite/material.min.css">
       <script src="/node_modules/material-design-lite/material.min.js"></script>
         <style include="shared-styles">
+          .file-upload{
+            background:#673ab7;
+            color:white;
+            border-radius:10px;
+            border:none
+          }
         </style>
         <section id="profile-wrapper">        
         <!-- Action Button -->
@@ -136,7 +142,9 @@ class ProfileApp extends PolymerElement {
                 <div class="col-md-4 col-sm-12 float-left">
                   <div class="container">
                     <p class="profile-title upload-title">Upload your resume</p>
-                    <input #Image type="file" on-click="uploadFile($event.target.files)"/>
+                    <button type="button" class="file-upload">
+                      <input #Image type="file" on-change="uploadFile()"/>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -208,11 +216,12 @@ class ProfileApp extends PolymerElement {
         </section>
     `;
     }
-
-    uploadFile(file){
-      var args = file.item[0];
-      console.log(args);
-
+    
+    uploadFile(event){
+      const file = event.target.files
+      const filename = file.length ? file[0].name : ''
+      if(filename)
+        alert(`Your Resume Successfully Updated (${filename})`)
     }
 
     editDetails(){

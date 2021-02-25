@@ -1,6 +1,8 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '@polymer/paper-input/paper-input.js';
 import '@polymer/iron-form/iron-form.js';
+import '@polymer/paper-dialog/paper-dialog.js';
+import '@polymer/paper-button/paper-button.js';
 import './style-element.js';
 
 class JobsList extends PolymerElement {
@@ -18,7 +20,14 @@ class JobsList extends PolymerElement {
             location : "Hyderabad",
             technologies : "JavaCloud, DevOps, Angularjs, Node.js, CSS, Javascript",
             salary : "Not disclosed",
-            posted : "3 days ago"
+            posted : "3 days ago",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 102,
@@ -28,7 +37,14 @@ class JobsList extends PolymerElement {
             location : "Hyderabad(Gachibowli)",
             technologies : "Angularjs, CSSNode, JsHTMLMern, StackCommunication",
             salary : "9,00,000 - 14,00,000 PA.",
-            posted : "1 days ago"
+            posted : "1 days ago",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 103,
@@ -38,7 +54,14 @@ class JobsList extends PolymerElement {
             location : "Hyderabad",
             technologies : "Javascript, RESTful API, AngularJS, CSS, jQueryEmber, jsJavascript",
             salary : "Not disclosed",
-            posted : "5 days ago"
+            posted : "5 days ago",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 104,
@@ -48,7 +71,14 @@ class JobsList extends PolymerElement {
             location : "Bengaluru, Hyderabad",
             technologies : "Javascript, Angular, 8TypeScript, AngularJS, Angular 7, jQueryUI",
             salary : "Not disclosed",
-            posted : "Today"
+            posted : "Today",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 105,
@@ -58,7 +88,14 @@ class JobsList extends PolymerElement {
             location : "Hyderabad",
             technologies : "Testing, React js, Node js, CSS, angular, CSS, jQuery",
             salary : "Not disclosed",
-            posted : "Just now"
+            posted : "Just now",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 106,
@@ -68,7 +105,14 @@ class JobsList extends PolymerElement {
             location : "Hyderabad(Gachibowli)",
             technologies : "Cloud, HTML, CSS, Javascript, AWSAzure, Polymer",
             salary : "Not disclosed",
-            posted : "Today"
+            posted : "Today",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 107,
@@ -78,7 +122,14 @@ class JobsList extends PolymerElement {
             location : "Bangaluru",
             technologies : "Javascript, rest, node js",
             salary : "9L",
-            posted : "1 days ago"
+            posted : "1 days ago",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 108,
@@ -88,7 +139,14 @@ class JobsList extends PolymerElement {
             location : "Bengaluru, Hyderabad",
             technologies : "Javascript, Angular, 8TypeScript, AngularJS, Angular 7, jQueryUI",
             salary : "Not disclosed",
-            posted : "Today"
+            posted : "Today",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           }
         ]
       },
@@ -103,7 +161,14 @@ class JobsList extends PolymerElement {
             location : "Hyderabad",
             technologies : "JavaCloud, DevOps, Angularjs, Node.js, CSS, Javascript",
             salary : "Not disclosed",
-            posted : "3 days ago"
+            posted : "3 days ago",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 102,
@@ -113,7 +178,14 @@ class JobsList extends PolymerElement {
             location : "Hyderabad(Gachibowli)",
             technologies : "Angularjs, CSSNode, JsHTMLMern, StackCommunication",
             salary : "9,00,000 - 14,00,000 PA.",
-            posted : "1 days ago"
+            posted : "1 days ago",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 103,
@@ -123,7 +195,14 @@ class JobsList extends PolymerElement {
             location : "Hyderabad",
             technologies : "Javascript, RESTful API, AngularJS, CSS, jQueryEmber, jsJavascript",
             salary : "Not disclosed",
-            posted : "5 days ago"
+            posted : "5 days ago",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 104,
@@ -133,7 +212,14 @@ class JobsList extends PolymerElement {
             location : "Bengaluru, Hyderabad",
             technologies : "Javascript, Angular, 8TypeScript, AngularJS, Angular 7, jQueryUI",
             salary : "Not disclosed",
-            posted : "Today"
+            posted : "Today",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 105,
@@ -143,7 +229,14 @@ class JobsList extends PolymerElement {
             location : "Hyderabad",
             technologies : "Testing, React js, Node js, CSS, angular, CSS, jQuery",
             salary : "Not disclosed",
-            posted : "Just now"
+            posted : "Just now",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 106,
@@ -153,7 +246,14 @@ class JobsList extends PolymerElement {
             location : "Hyderabad(Gachibowli)",
             technologies : "Cloud, HTML, CSS, Javascript, AWSAzure, Polymer",
             salary : "Not disclosed",
-            posted : "Today"
+            posted : "Today",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 107,
@@ -163,7 +263,14 @@ class JobsList extends PolymerElement {
             location : "Bangaluru",
             technologies : "Javascript, rest, node js",
             salary : "9L",
-            posted : "1 days ago"
+            posted : "1 days ago",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           },
           {
             jobId : 108,
@@ -173,7 +280,14 @@ class JobsList extends PolymerElement {
             location : "Bengaluru, Hyderabad",
             technologies : "Javascript, Angular, 8TypeScript, AngularJS, Angular 7, jQueryUI",
             salary : "Not disclosed",
-            posted : "Today"
+            posted : "Today",
+            jobApplicants : 49,
+            description : [
+              "Looking for React.js developer who is proficient with JS,HTML and CSS",
+              "Experience with common frontend development tools such as Babel,Webpack,NPM,etc",
+              "Experience in writing test cases",
+              "Experience with popular React.js workflows (such as Flux or Redux)"
+            ]
           }
         ]
       },
@@ -189,9 +303,6 @@ class JobsList extends PolymerElement {
     <link rel="stylesheet" href="/node_modules/material-design-lite/material.min.css">
     <script src="/node_modules/material-design-lite/material.min.js"></script>
       <style include="shared-styles">
-        .cards-container {
-          margin:5px;
-        }
         .mdl-card{
           margin:5px!important;
           width:95%!important;
@@ -246,6 +357,11 @@ class JobsList extends PolymerElement {
           </div>
         </template>
       </div>
+
+      <paper-button id="d-button" on-click="document.querySelector('#dialog').toggle()">Hello</paper-button>
+      <paper-dialog id="dialog">
+        <p>Hello</p>
+      </paper-dialog>
     `;
    }
 
@@ -269,8 +385,7 @@ class JobsList extends PolymerElement {
 
    selectedJob(e) {
       var item = e.model.__data.item;
-      console.log(item.jobId);
-      window.localStorage.setItem('jobsList',JSON.stringify(this.jobs));
+      window.localStorage.setItem('selectedJob',JSON.stringify(item));
       window.location.href = "/jobs-description";
    }
 }

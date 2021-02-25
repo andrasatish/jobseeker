@@ -229,6 +229,9 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
     .col-md-10{
       width:80%;
     }
+    .col-md-12{
+      width:100%;
+    }
     .float-left{
       float: left;
     }
@@ -251,6 +254,9 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       padding:10px 40px 10px 10px;
       margin:10px 40px 10px 10px;
       border-radius:5px;
+    }
+    .cards-container {
+      margin:5px;
     }
     .mx-10{
       margin:0 10px;

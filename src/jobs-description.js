@@ -41,8 +41,13 @@ class JobDescritpion extends PolymerElement {
         color: white;
         width:100px!important;
       }
+      .para-item{
+        margin-bottom:0!important;
+        margin:0 0 0 20px;
+        font-size:15px!important;
+      }
     </style>
-   <div class="job-card">
+    <div class="job-card">
           <div class="row">
           <div class="col-md-12 col-sm-12">
             <div class="demo-card-wide mdl-card">
@@ -70,13 +75,16 @@ class JobDescritpion extends PolymerElement {
         </div>
       </div>
     </div>
-
-
     <div class="job-card my-10">
       <div class="row">
         <div class="col-md-12 col-sm-12">
           <div class="demo-card-wide mdl-card">
-            <h1>Hello<h1>
+            <div class="m-20">
+                <p><strong>Job Highlights</strong></p>
+                <template is="dom-repeat" items="{{selectedJob.description}}" id="desc"> 
+                <div class="item"><p class="para-item">[[item]]</p></div>
+              </template>
+            </div>
           </div>
         </div>
       </div>

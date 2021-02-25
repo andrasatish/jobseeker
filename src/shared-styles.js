@@ -262,13 +262,13 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       margin:0 10px;
     }
     .my-10{
-      margin:10 0;
+      margin:10px 0;
     }
     .mx-5{
       margin:0 5px;
     }
     .my-5{
-      margin:5 0;
+      margin:5px 0;
     }
     .ml-5{
       margin-left:5px;
@@ -296,6 +296,9 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
     }
     .mb-10{
       margin-bottom:10px;
+    }
+    .m-20{
+      margin:20px;
     }
     .pl-5{
       padding:5px;
